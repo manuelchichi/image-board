@@ -13,11 +13,11 @@ A fin de completar los objetivos propuestos, se desarrollo una aplicación simpl
 * Eliminar imagenes.
 * Autenticacion y registro.
 
-## Stack utilizado.
+## Tecnologias utilizadas.
 
-Para realizar dicha herramienta se considero el uso de base de datos mongo. Para el backend se utilizo el framework flask por su sencillez, junto con librerias como Flask-Login para la autenticacion. Para la aplicacion de migraciones se utilizo pymongo-migrate.
+Para realizar dicha herramienta se considero el uso de base de datos *mongo*. Para el backend se utilizo el framework *flask* por su sencillez, junto con la libreria *Flask-Login* para la autenticacion. Para la aplicacion de migraciones se utilizo la herramienta *pymongo-migrate*. Finalmente, para realizar pruebas se utilizo la libreria *pytest-flask*. 
 
-## To do.
+## A realizar.
 
 - [ ] Preparar la aplicacion para desplegarla en ambientes en produccion con Docker.
 - [ ] Comprobar imagenes vacias en el proceso de actualizacion de imagenes.
