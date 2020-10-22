@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h1 class="title">
+        You are logged in as {{ name }}.
+    </h1>
+    <h3 class="subtitle">This is your image menu</h3>
+    <h4 class="subtitle">Add new Image</h4>
+    <div class="box">
+        <form action="/image/" method="post" enctype="multipart/form-data">
+            <label for="title">Title </label>
+            <input type="text" id="title" name="title"><br><br>
+            <label for="image">Select image</label>
+            <input type="file" id="image" name="image" accept="image/png, image/jpeg"><br><br>
+            <input type="submit" value="Submit">
+        </form> 
+    </div>
+    <h4 class="subtitle">All your images</h4>
+    <div class="box">
+        {% if userImages |length != 0 %}
+            {% for image in userImages %}
+            <hr>
+            <div><img src="data:image/jpg;base64,{{ image.base64 }}" max-width=200px max-height=150px min-width=200px min-height=150px title={{ image.title }}> </div>
+            <form action="/image/delete" method="post">
+                <input type = "hidden" name = "imageId" value = "{{ image._id }}" />
+                <input type="submit" name="button" value="X"> 
+            </form>
+            <button onclick="location.href = '{{ url_for('main.show_image',id=image._id) }}'" id="myButton" class="float-left submit-button" >Edit</button>
+            {% endfor %}
+            <hr>
+        {% else  %}
+            <div>You don't have any image associated with this account</div>
+        {% endif %}
+      </div>
+</div>
+{% endblock %}

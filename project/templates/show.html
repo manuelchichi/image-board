@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Image viewer
+</h1>
+<h2 class="subtitle">
+  Image id - {{ image._id }} | Image title - {{ image.title }}
+</h2>
+<div class="box">
+    <div><img src="data:image/jpg;base64,{{ image.base64 }}"  max-width=75% max-height=75% title={{ image.title }}> </div>
+</div>}
+{% if current_user.is_authenticated %}
+<h3 class="subtitle">
+  Modify Image
+</h3>
+<div class="box">
+  <form action="/image/modify" method="post" enctype="multipart/form-data">
+      <label for="title">New title </label>
+      <input type="text" id="title" name="title" value="{{ image.title }}"><br><br>
+      <label for="image">Select new image</label>
+      <input type="file" id="image" name="image" accept="image/png, image/jpeg"><br><br>
+      <input type ="hidden" name = "imageId" value = "{{ image._id }}" />
+      <input type="submit" value="Submit">
+  </form> 
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Image Board
+</h1>
+<h2 class="subtitle">
+  List of all images in the database.
+</h2>
+<div class="box">
+  {% for image in allImages %}
+    <hr>
+    <div><img src="data:image/jpg;base64,{{ image.base64 }}"  max-width=75% max-height=75% title={{ image.title }}> </div>
+  {% endfor %}
+  <hr>
+</div>
+
+{% endblock %}
