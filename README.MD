@@ -24,7 +24,14 @@ Para realizar dicha herramienta se considero el uso de base de datos *mongo*. Pa
 - [ ] Automatizar la ejecucion de pymongo-migrate.
 - [ ] Realizar mas pruebas (incompletas).
 
-## Comandos para iniciarlizar el ambiente.
+## Comandos para iniciar el ambiente.
+
+### Requisitos previos.
+
+[Docker](https://docs.docker.com/engine/install/) para correr la base de datos (mongo).
+[Python](https://www.python.org/downloads/) para crear el entorno virtual y ejecutar los archivos.
+
+### Comandos.
 
 ```
 ./mongodb.sh
@@ -36,7 +43,7 @@ export FLASK_DEBUG=1
 flask run 
 ```
 
-Fuentes utilizadas
+## Fuentes utilizadas
 
 * [Authentication with Flask-Login](https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login)
 * [Flask with TDD](https://github.com/mjhea0/flaskr-tdd)
