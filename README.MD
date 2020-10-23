@@ -30,7 +30,7 @@ Para realizar dicha herramienta se considero el uso de base de datos *mongo*. Pa
 ./mongodb.sh
 python3 -m venv env
 source env/bin/activate
-pip3 install -r .requirements.txt
+pip3 install -r requirements.txt
 export FLASK_APP=project
 export FLASK_DEBUG=1
 flask run 
