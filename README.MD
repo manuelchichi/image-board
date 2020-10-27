@@ -33,6 +33,7 @@ Para realizar dicha herramienta se considero el uso de base de datos *mongo*. Pa
 
 ### Comandos.
 
+Levantar el entorno de manera local en Flask.
 ```
 ./mongodb.sh
 python3 -m venv env
@@ -42,6 +43,13 @@ export FLASK_APP=project
 export FLASK_DEBUG=1
 flask run 
 ```
+
+Realizar una migracion al ultimo upgrade de la base de datos. 
+```
+pymongo-migrate migrate -u 'mongodb://localhost:27017/image-board-dev'
+```
+
+En la primera migracion de ejemplo (INIT), se agrega un usuario y una imagen.
 
 ## Fuentes utilizadas
 
